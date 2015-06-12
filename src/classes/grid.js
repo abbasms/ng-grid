@@ -801,7 +801,7 @@ var ngGrid = function ($scope, options, sortService, domUtilityService, $filter,
         if (self.prevScrollTop === scrollTop && !force) {
             return;
         }
-        if (scrollTop > 0 && self.$viewport[0].scrollHeight - Math.round(scrollTop) <= self.$viewport.outerHeight()) {
+        if (scrollTop > 0 && self.$viewport[0].scrollHeight - scrollTop <= self.$viewport.outerHeight()) {
             $scope.$emit('ngGridEventScroll');
         }
         var rowIndex = Math.floor(scrollTop / self.config.rowHeight);
